@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Movie Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Movie Explorer App (Milestone 1)</h1>
-  <p>Project setup completed.</p>
+
+<body class="bg-gray-900 text-white">
+
+  <div class="container mx-auto p-4">
+    
+    <h1 class="text-3xl font-bold text-center mb-6">🎬 Movie Explorer</h1>
+
+    
+    <div class="flex justify-center mb-6">
+      <input id="searchInput" type="text" placeholder="Search movies..."
+        class="p-2 w-1/2 rounded text-black">
+      <button onclick="searchMovies()"
+        class="ml-2 bg-blue-500 px-4 py-2 rounded">Search</button>
+    </div>
+
+    
+    <div id="moviesContainer"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
