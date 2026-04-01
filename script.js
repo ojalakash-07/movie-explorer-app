@@ -17,9 +17,9 @@ async function searchMovies() {
     const data = await res.json();
 
     if (data.Response === "False") {
-      container.innerHTML = `<p>${data.Error}</p>`;
-      return;
-    }
+  container.innerHTML = "<p>No movies found</p>";
+  return;
+}
 
     displayMovies(data.Search);
 
@@ -29,21 +29,25 @@ async function searchMovies() {
 }
 
 function displayMovies(movies) {
+  const year = document.getElementById("yearFilter").value;
+
   container.innerHTML = "";
 
-  movies.forEach(movie => {
-    const card = document.createElement("div");
+  movies
+    .filter(movie => year === "" || movie.Year === year)
+    .forEach(movie => {
+      const card = document.createElement("div");
 
-    card.className = "bg-gray-800 p-3 rounded";
+      card.className = "bg-gray-800 p-3 rounded";
 
-    card.innerHTML = `
-      <img src="${movie.Poster}" class="w-full h-64 object-cover mb-2"/>
-      <h2 class="text-lg font-bold">${movie.Title}</h2>
-      <p>${movie.Year}</p>
-    `;
+      card.innerHTML = `
+        <img src="${movie.Poster}" class="w-full h-64 object-cover mb-2"/>
+        <h2 class="text-lg font-bold">${movie.Title}</h2>
+        <p>${movie.Year}</p>
+        `;
 
-    container.appendChild(card);
-  });
+      container.appendChild(card);
+    });
 }
 
 document.getElementById("searchInput").addEventListener("keypress", function(e) {
