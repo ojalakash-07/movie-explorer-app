@@ -37,4 +37,4 @@ movie-explorer-app/
 
 ## Current Status
 
-Milestone 1 Completed
+Milestone 3 Completed
