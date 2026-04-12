@@ -1,40 +1,91 @@
-##           Movie Explorer Web Application.         ##
+# 🎬 Movie Explorer App
 
-## Project Overview
+## 📌 My Project Overview
 
-This is a web application that allows users to search and explore movies using a public API.
+Movie Explorer is a responsive web application that allows users to search for movies, view detailed information, and save their favorite movies. The app uses the OMDb API to fetch real-time movie data.
 
-## Project Objective
+---
 
-* To Learn API integration using JavaScript
-* To Build interactive UI
-* To implement "search, filter, and sort" features
+## 🚀 Live Demo
 
-## Public API Used
+🌐 https://ojalakash-07.github.io/movie-explorer-app/
 
-OMDb API (https://www.omdbapi.com/)
+---
 
-## MY Planned Features for future
+## ✨ Features I Have Added
 
-* Search movies
-* Display movie details
-* Filter by year/type
-* Sort by rating/year
+### 🔍 Core Features (Milestone 1 & 2)
 
-## Technologies I will use
+* Search movies by name
+* Fetch data using OMDb API
+* Display movie results dynamically
+* Filter movies by year
+
+---
+
+### ⭐ Advanced Features (Milestone 3)
+
+* Add movies to Favorites (stored in localStorage)
+* Movie details popup (modal)
+* Search using Enter key
+* Handles missing poster images
+
+---
+
+### 🚀 Bonus Features (Milestone 4)
+
+* Live filtering (updates instantly)
+* Click outside modal to close
+* Improved button UX (Added / Saved state)
+* Responsive design using Tailwind CSS
+
+---
+
+## 🛠️ Tech Stack
 
 * HTML
-* CSS
-* JavaScript (Fetch API)
+* CSS (Tailwind CSS)
+* JavaScript (Vanilla JS)
+* OMDb API
 
-## Project Structure Planned
+---
 
+## 🔗 API Used
+
+OMDb API: https://www.omdbapi.com/
+
+---
+
+## 📂 Project Structure
+
+```
 movie-explorer-app/
 │── index.html
-│── style.css
 │── script.js
+│── style.css (optional)
 │── README.md
+```
 
-## Current Status
+---
 
-Milestone 3 Completed
+## 🧠 Learnings
+
+* Working with APIs using fetch()
+* DOM manipulation and dynamic rendering
+* Handling UI/UX improvements with JavaScript
+
+---
+
+## 📌 Project Status
+
+✅ Milestone 1 Completed
+✅ Milestone 2 Completed
+✅ Milestone 3 Completed
+✅ Milestone 4 Completed
+
+---
+
+## 👨‍💻 Author
+
+GitHub: https://github.com/ojalakash-07
+
