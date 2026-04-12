@@ -50,7 +50,7 @@ function displayMovies(movies) {
       <h2 class="text-lg font-bold">${movie.Title}</h2>
       <p>${movie.Year}</p>
 
-      <button onclick="addToFavorites('${movie.Title}')"
+      <button onclick="addToFavorites('${movie.Title}', this)"
         class="mt-2 bg-green-500 px-2 py-1 rounded">
         ⭐ Add to Favorites
       </button>
@@ -66,13 +66,13 @@ document.getElementById("searchInput").addEventListener("keypress", function(e) 
   }
 });
 
-function addToFavorites(title) {
+function addToFavorites(title, btn) {
   if (!favorites.includes(title)) {
     favorites.push(title);
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    alert("Added to favorites!");
+    btn.innerText = "✅ Added";
   } else {
-    alert("Already in favorites");
+    btn.innerText = "⭐ Saved";
   }
 }
 
@@ -85,7 +85,7 @@ async function showDetails(id) {
 
   content.innerHTML = `
     <h2 class="text-xl font-bold mb-2">${data.Title}</h2>
-    <img src="${data.Poster}" class="w-full mb-2"/>
+    <img src="${data.Poster !== "N/A" ? data.Poster : "https://via.placeholder.com/300x400"}" class="w-full mb-2"/>
     <p><strong>Year:</strong> ${data.Year}</p>
     <p><strong>Genre:</strong> ${data.Genre}</p>
     <p><strong>Plot:</strong> ${data.Plot}</p>
@@ -100,4 +100,10 @@ function closeModal() {
 
 document.getElementById("yearFilter").addEventListener("change", () => {
   searchMovies();
+});
+
+document.getElementById("movieModal").addEventListener("click", function(e) {
+  if (e.target.id === "movieModal") {
+    closeModal();
+  }
 });
